@@ -3045,9 +3045,9 @@ tr46@^1.0.0:
   dependencies:
     punycode "^2.1.0"
 
-treest@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/treest/-/treest-0.0.6.tgz#97b00c7c1f4d16ba2d4de09f469ebe1379210412"
+treest@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/treest/-/treest-0.1.1.tgz#9ca174aae2d088f8b57fe9584168772851b55d1b"
   dependencies:
     "@types/deep-equal" "^1.0.1"
     "@types/node" "^9.6.5"
