@@ -42,6 +42,10 @@ if (error) {
         console.log(error.toString()); // Error1
 }
 
+// Also supported array-like response
+
+const [users, error] = await withError(() => Promise.resolve(["user1"]));
+
 ```
 
 

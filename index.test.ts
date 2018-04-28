@@ -1,7 +1,7 @@
 import withError from ".";
 
 it("when withError callback non-promisify and not thrown exception, should return result", () => {
-    const { result } = withError(() => "test");
+    const [result] = withError(() => "test");
     expect(result.toUpperCase()).toBe("TEST");
 });
 it("when withError callback is promisify and not throw exception, should return promise with result", async () => {

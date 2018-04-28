@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const _1 = require(".");
 it("when withError callback non-promisify and not thrown exception, should return result", () => {
-    const { result } = _1.default(() => "test");
+    const [result] = _1.default(() => "test");
     expect(result.toUpperCase()).toBe("TEST");
 });
 it("when withError callback is promisify and not throw exception, should return promise with result", () => __awaiter(this, void 0, void 0, function* () {
