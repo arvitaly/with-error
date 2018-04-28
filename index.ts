@@ -3,10 +3,10 @@ type IWithErrorReturn<R> = [
     any
 ] & { error: any, result: R };
 // tslint:disable callable-types
-interface IWithErrorPromise {
+interface IWithError {
     <R>(cb: () => R): IWithErrorReturn<R>;
 }
-interface IWithErrorPromise {
+interface IWithError {
     <R>(cb: () => Promise<R>): Promise<IWithErrorReturn<R>>;
 }
 const withError = (cb: () => any): any => {
@@ -37,4 +37,4 @@ const withError = (cb: () => any): any => {
         return response;
     });
 };
-export default withError as (IWithErrorPromise);
+export default withError as (IWithError);

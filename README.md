@@ -1,9 +1,25 @@
 # with-error
 
-Exception as function for exceptions haters
+Either monad for work with exceptions in JavaScript. Go-style.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+
+# Why?
+
+Because, exceptions may be the way to callback-hell.
+
+```typescript
+try{
+    func();
+}catch(e){
+    try{
+        func2()
+    }catch(e){
+        // HELL
+    }    
+}
+```
 
 # Install
 
@@ -52,15 +68,18 @@ const [users, error] = await withError(() => Promise.resolve(["user1"]));
 # API
 
 ```typescript
-interface IWithErrorPromise {
+// Response
+type IWithErrorReturn<R> = [
+    R,
+    any
+] & { error: any, result: R };
+// non-promisify with-error
+interface IWithError {
     <R>(cb: () => R): IWithErrorReturn<R>;
 }
-interface IWithErrorPromise {
+// promisify with-error
+interface IWithError {
     <R>(cb: () => Promise<R>): Promise<IWithErrorReturn<R>>;
-}
-interface IWithErrorReturn<R> {
-    result: R;
-    error: any;
 }
 ```    
 
