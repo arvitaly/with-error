@@ -1,6 +1,6 @@
 {
   "name": "with-error",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Exception as function",
   "main": "index.js",
   "scripts": {
