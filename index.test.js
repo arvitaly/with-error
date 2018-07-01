@@ -18,7 +18,9 @@ it("when withError callback is promisify and not throw exception, should return 
     expect(result.toUpperCase()).toBe("TEST2");
 }));
 it("when withError callback non-promisify and thrown exception, should return error", () => {
-    const { error } = _1.default(() => { throw new Error("Error1"); });
+    const { error } = _1.default(() => {
+        throw new Error("Error1");
+    });
     expect(error).toEqual(new Error("Error1"));
 });
 it("when withError callback promisify and thrown exception, should return error", () => __awaiter(this, void 0, void 0, function* () {
