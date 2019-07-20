@@ -1,8 +1,11 @@
 language: node_js
 node_js:
-  - "6"
+- '6'
 install:
-  - npm install
+- npm install
 script:
-  - npm test
+- npm test
 after_script: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+deploy:
+  api_key:
+    secure: A16htHd50izRqKmgZwusTltB4OM6jHb7nM6M02UyUbPEUgEjSqPsOGMKEUgs7OSjH4Ms2W9sKZLL5ImY9W/1sb+F69EgBpw5IACyVelfn53b8/e/Hqxxu6NJSj0VVcZ0INgrghGGhTxkKjOMe2ItXU8+674o8wqa4YRILdeZc2oN4BSUfuaSks2QDybH0mmxBEWcJ5z00zSmVeg9E7zZsgZTUgl5CeN7UBW1xdqs1xz33TA6JQNZi8CWt24Xcr+wVWGhv5/Q58uHUQ6+uqjau0k1V5osIqWvOOCSv/ogh0nwyIZtjWI7GXjg6Zh4zNXIiO4Y6OYB/BUfzSDqBG047d+QR5229jFZtxF/C/4plPD7xCxA+2XqdUfX6kmnzLeGQOyPxSfbMUdyusnTR2KcJTh2aN+a8jIJLzdAorut9zm3bL6EpHGRsSjQUxxt2DfV9iaRuiO01qOK1EhkdFSqLzOEuj7PoTOjC0wL+YPDLlMvKo5QR6c25sskF0GMATriCHz41Ro0nu0Qx+BgaHB/ZJ5SvX7f/XLmkrzq0sUIzAIH4D4b5+MkA/SCXit8cY2kWyq61RgqCcRmExz/rQBSS3X8JNzeByiRTS8t4Cn4kpq+Lc5jdleVfl0aYP/k27ABuUaJI28LclOpdwQc4KLdo/zUhwd+XorWCsUoy7sUuoQ=
